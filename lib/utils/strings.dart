@@ -25,6 +25,7 @@ const String next = "Next";
 // Login Text
 const String welcomeBack = "Welcome Back!";
 const String welCome = "Welcome back Bruce!";
+const String business = "Business Summary";
 const String demoApp = "Demo Test App";
 const String helloTherePleaseLoginFirst =
     "Welcome back! please enter your details";
