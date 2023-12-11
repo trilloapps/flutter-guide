@@ -31,7 +31,7 @@ class _BottomNavigateBarState extends State<BottomNavigateBar> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'User',
+            label: 'Profile',
           ),
         ],
         currentIndex: bottomNavProvider.selectedIndex,
