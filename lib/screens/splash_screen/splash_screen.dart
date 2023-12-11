@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
         authProvider.authModel.accessToken!;
         authProvider.authModel = AuthModel.fromJson(user);
         Navigator.pushNamedAndRemoveUntil(
-            context, RouterHelpers.homeScreen, (route) => false);
+            context, RouterHelpers.navBar, (route) => false);
       } else  {
         Navigator.of(context).pushReplacementNamed(
           RouterHelpers.loginScreen,
@@ -61,12 +61,12 @@ class _SplashScreenState extends State<SplashScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              Images.splashImage,
+              Images.demo,
               height: 140.h,
               width: 120.w,
               // fit: BoxFit.cover,
             ).center,
-            oneDiamondMarketing.toText(
+            demoApp.toText(
               fontSize: 20.sp,
               fontWeight: FontWeight.bold,
             ),

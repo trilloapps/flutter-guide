@@ -6,5 +6,7 @@ class Images {
 
   ///Icons
   static const String error = "assets/images/error.png";
+  static const String user = "assets/images/user.png";
+  static const String demo = "assets/images/demo.png";
 
 }
