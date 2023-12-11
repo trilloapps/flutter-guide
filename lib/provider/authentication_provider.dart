@@ -77,7 +77,7 @@ class AuthenticationProvider with ChangeNotifier {
           tenantController.clear();
           Navigator.pushNamed(
             context,
-            RouterHelpers.homeScreen,
+            RouterHelpers.navBar,
           );
         } else {
           showToast(message: response.data['message']);
