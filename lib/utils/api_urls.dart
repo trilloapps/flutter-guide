@@ -6,5 +6,7 @@ class ApiUrl {
   static String logInUrl = "$baseUrl/ajaxLogin";
   static String forgotPasswordUrl = "$baseUrl/_preauthsvc/user/forgotPassword";
 
+  static String casesData = "$baseUrl/ds/function/shared/AppGetBusinessData";
+
 
 }
