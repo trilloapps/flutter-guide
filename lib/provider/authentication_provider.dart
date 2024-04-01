@@ -43,27 +43,35 @@ class AuthenticationProvider with ChangeNotifier {
 
   /// Sign in User API ///
   bool isSignInLoading = false;
-  signInUser(BuildContext context) async {
+
+  Future<void> signInUser(BuildContext context) async {
     FocusManager.instance.primaryFocus!.unfocus();
     isSignInLoading = true;
     notifyListeners();
+
     try {
       dynamic data = {
-        'j_username': emailController.text.trim(),
-        'j_password': passwordController.text.trim(),
-        'tenant_display_name': tenantController.text.trim(),
+        'userId': emailController.text.trim(),
+        'password': passwordController.text.trim(),
       };
-      Response response = await apiRepo.postRequest(
-        context,
-        RouterHelpers.noConnectionScreen,
-        ApiUrl.logInUrl,
-        data,
+
+      final response = await http.post(
+        Uri.parse(ApiUrl.logInUrl),
+        body: jsonEncode(data),
+        headers: {
+          "Content-Type": "application/json",
+          'Accept': "*/*",
+          'x-org-name': "cloud",
+          'x-app-name': "main"
+        },
       );
+
       if (response.statusCode == 200 || response.statusCode == 201) {
         isSignInLoading = false;
         notifyListeners();
-        if (response.data['status'] == 'connected') {
-          authModel = AuthModel.fromJson(response.data);
+        final responseData = jsonDecode(response.body);
+        if (responseData['status'] == 'connected') {
+          authModel = AuthModel.fromJson(responseData);
           SplashScreen.accessTokenValueNotifier.value = authModel.accessToken!;
           await LocalDb.storeBearerToken(authModel.accessToken!);
           await LocalDb.storeUserName(authModel.user!.fullName!.toString());
@@ -80,15 +88,15 @@ class AuthenticationProvider with ChangeNotifier {
             RouterHelpers.navBar,
           );
         } else {
-          showToast(message: response.data['message']);
+          showToast(message: responseData['message']);
         }
       }
     } catch (e) {
       isSignInLoading = false;
       notifyListeners();
       print(e);
-    }
-  }
+    }}
+
 
   /// Forgot password API ===>
   bool isForgotPasswordLoading = false;

@@ -26,6 +26,7 @@ dependencies:
   connectivity:
   fluttertoast:
   intl: ^0.17.0
+  flutter_avif: ^2.3.0
 
 
 dev_dependencies:

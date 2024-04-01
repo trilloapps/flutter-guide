@@ -29,7 +29,6 @@ class _UserPageState extends State<UserPage> {
 
   @override
   void initState() {
-    Provider.of<HomeProvider>(context, listen: false).fetchData(context);
     // TODO: implement initState
     super.initState();
   }
@@ -102,34 +101,7 @@ class _UserPageState extends State<UserPage> {
                         TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
                   ),
                   demoApp.toText(fontSize: 13.sp, color: Color(0xff64748B)),
-                  25.height,
-                  SalesInfoCard(
-                    title: 'Cases Sold YTD',
-                    value:
-                        '${NumberFormat('#,##0.0').format(provider.apiData!.totalCasesYTD)}',
-                    percentageChange:
-                        '${provider.apiData!.percentageChangeYTD}%',
-                    percentagePadding: EdgeInsets.only(left: 120, top: 20.h),
-                    color: provider.apiData?.percentageChangeStores != null
-                        ? provider.apiData!.percentageChangeStores! >= 0
-                            ? Colors.green
-                            : Colors.grey
-                        : Colors.red,
-                  ),
-                  12.height,
-                  SalesInfoCard(
-                    title: 'Total Stores YTD',
-                    value:
-                        '${NumberFormat('#,##0.0').format(provider.apiData!.totalStores)}',
-                    color: provider.apiData?.percentageChangeStores != null
-                        ? provider.apiData!.percentageChangeStores! >= 0
-                            ? Colors.green
-                            : Colors.red
-                        : Colors.grey,
-                    percentageChange:
-                        '${provider.apiData!.percentageChangeStores}%',
-                    percentagePadding: EdgeInsets.only(left: 116, top: 20.h),
-                  ),
+
                 ],
               ),
             );
