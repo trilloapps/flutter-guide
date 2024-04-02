@@ -83,10 +83,7 @@ class AuthenticationProvider with ChangeNotifier {
           emailController.clear();
           passwordController.clear();
           tenantController.clear();
-          Navigator.pushNamed(
-            context,
-            RouterHelpers.navBar,
-          );
+          Navigator.pushNamedAndRemoveUntil(context, RouterHelpers.navBar, (route) => false);
         } else {
           showToast(message: responseData['message']);
         }

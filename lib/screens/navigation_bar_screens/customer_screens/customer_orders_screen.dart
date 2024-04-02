@@ -120,10 +120,9 @@ class _CustomerOrderScreenState extends State<CustomerOrderScreen> {
                 }
               },
             ),
-          ):Center(
-            child:Text('Not Found!'),
-          )
-        ],
+          ):              Center(child: CircularProgressIndicator()),
+
+    ],
       )
     );
   }
