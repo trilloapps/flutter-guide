@@ -182,6 +182,7 @@ class CustomerProvider with ChangeNotifier{
   String? weight;
   TextEditingController quantityController=TextEditingController();
   Future<void> editItem(BuildContext context, String id,String quantity) async {
+    itemDetail=[];
     try {
       final dio = Dio();
       final response = await dio.post(
@@ -204,7 +205,7 @@ class CustomerProvider with ChangeNotifier{
       if (response.statusCode == 200) {
         final jsonData = response.data;
         if (jsonData['status'] == 'success') {
-          quantity=quantityController.text;
+          getItemDetail(context, itemId!);
           showSuccessToast(message: 'Item Edit SuccessFully!');
           Navigator.pop(context);
           notifyListeners();
