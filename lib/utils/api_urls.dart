@@ -10,7 +10,8 @@ class ApiUrl {
   static String casesData = "$baseUrl/ds/function/shared/AppGetBusinessData";
   static String customerData = "$baseUrl/GetCustomers";
   static String getCustomerOrders = "$baseUrl/GetCustomerOrders";
-
-
+  static String getOrderItems = "$baseUrl/GetOrderItems";
+  static String getItemDetails = "$baseUrl/GetItemDetails";
+  static String editItem = "$baseUrl/EditLineItem";
 
 }

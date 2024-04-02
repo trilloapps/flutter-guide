@@ -43,11 +43,11 @@ class _UserPageState extends State<UserPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Demo App',
-          style: TextStyle(color: Colors.black),
+          'Sample App',
+          style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue.shade200,
+        backgroundColor: Colors.blue.shade800,
         actions: [
           IconButton(
             onPressed: () {
@@ -66,7 +66,7 @@ class _UserPageState extends State<UserPage> {
       key: _scaffoldKey,
       body: Consumer<HomeProvider>(
         builder: (context, provider, _) {
-          if (provider.apiData == null) {
+          if (provider.apiData != null) {
             return Center(child: CircularProgressIndicator());
           } else {
             return Container(
