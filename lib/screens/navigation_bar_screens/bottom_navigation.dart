@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:test_demo/screens/navigation_bar_screens/customer_screens/customer_screen.dart';
 import 'package:test_demo/screens/navigation_bar_screens/user_page.dart';
 import 'package:test_demo/utils/images.dart';
 import '../../provider/bottom_nav_provider.dart';
@@ -27,7 +28,7 @@ class _BottomNavigateBarState extends State<BottomNavigateBar> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: 'Customer',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
@@ -45,7 +46,7 @@ class _BottomNavigateBarState extends State<BottomNavigateBar> {
   Widget _getPage(int selectedIndex) {
     switch (selectedIndex) {
       case 0:
-        return HomeScreen();
+        return CustomerScreen();
       case 1:
         return UserPage();
       default:

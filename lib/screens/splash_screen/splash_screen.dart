@@ -66,7 +66,7 @@ class _SplashScreenState extends State<SplashScreen> {
               width: 120.w,
               // fit: BoxFit.cover,
             ).center,
-            demoApp.toText(
+            'Sample App'.toText(
               fontSize: 20.sp,
               fontWeight: FontWeight.bold,
             ),
