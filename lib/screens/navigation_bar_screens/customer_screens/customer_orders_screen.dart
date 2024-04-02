@@ -28,6 +28,7 @@ class _CustomerOrderScreenState extends State<CustomerOrderScreen> {
     // TODO: implement initState
     customerProvider=Provider.of<CustomerProvider>(context,listen: false);
     customerProvider.getCustomerOrders(context, customerProvider.customerId.toString());
+
     super.initState();
   }
 
@@ -39,6 +40,13 @@ class _CustomerOrderScreenState extends State<CustomerOrderScreen> {
         title: const Text('Sample App', style: TextStyle(color: Colors.white,),),
         backgroundColor: Colors.blue.shade800,
         automaticallyImplyLeading: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            customerProvider.searchController.clear();
+            Navigator.of(context).pop(); // Go back
+          },
+        ),
       ),
       body: Column(
         children: [
