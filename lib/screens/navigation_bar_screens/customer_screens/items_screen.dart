@@ -43,6 +43,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
             final itemsData = controller.items[index];
           return GestureDetector(
                 onTap: (){
+                  controller.itemDetail=[];
                  controller.itemId= itemsData.id.toString();
                  Navigator.pushNamed(context, RouterHelpers.itemDetails);
                 },
