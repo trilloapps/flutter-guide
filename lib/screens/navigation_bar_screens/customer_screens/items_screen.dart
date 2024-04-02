@@ -108,9 +108,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
                   }
                 },
               ),
-            ):Center(
-              child:Text('Not Found!'),
-            ),
+            ): Center(child: CircularProgressIndicator()),
           ],
         )
     );
