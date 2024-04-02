@@ -95,7 +95,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
                           customerName: 'Name ',
                           customerEmail: 'Description ',
                           customerPhone: 'Code ',
-                          imagePath: 'rtygfd',
+                          imagePath2: itemsData.picture,
                           customerAddress: 'Weight',
                           name: '${itemsData.itemName}',
                           email: itemsData.itemDescription.toString(),

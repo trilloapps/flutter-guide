@@ -22,7 +22,8 @@ class CustomProfileCard extends StatelessWidget {
   String? delivery;
   String? bookingDate;
   String? deliveryTime;
-   String? imagePath;
+  String? imagePath;
+  String? imagePath2;
   final VoidCallback? onViewTap;
 
    CustomProfileCard({
@@ -33,7 +34,7 @@ class CustomProfileCard extends StatelessWidget {
      this.address,
      this.imagePath,this.color,this.color2,this.colorValue,
      this.customerName,
-     this.customerEmail,
+     this.customerEmail,this.imagePath2,
      this.status,
      this.statusValue,this.booking,this.bookingDate,this.delivery,this.deliveryTime,
      this.customerPhone,
@@ -79,6 +80,25 @@ class CustomProfileCard extends StatelessWidget {
                   : Image.asset(Images.profile),
             ),
           ),
+          if(imagePath2!=null)
+            Container(
+              height: 55,
+              width: 55,
+              margin: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  border: Border.all(
+                      color: Colors.white, // Add a border color if needed
+                      width: 2)),
+              child: ClipOval(
+                child: imagePath2 != ""
+                    ? Image.network(
+                  imagePath2!,
+                  fit: BoxFit.cover,
+                )
+                    : Image.asset(Images.profile),
+              ),
+            ),
           Row(
             children: [
               Column(
