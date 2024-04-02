@@ -39,6 +39,13 @@ class _ItemsScreenState extends State<ItemsScreen> {
           title: const Text('Sample App', style: TextStyle(color: Colors.white,),),
           backgroundColor: Colors.blue.shade800,
           automaticallyImplyLeading: true,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back,color: Colors.white,),
+            onPressed: () {
+              customerProvider.searchController.clear();
+              Navigator.of(context).pop(); // Go back
+            },
+          ),
         ),
         body: Column(
           children: [
