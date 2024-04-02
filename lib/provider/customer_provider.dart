@@ -15,7 +15,7 @@ import '../utils/show_toast.dart';
 
 class CustomerProvider with ChangeNotifier{
 
-
+  TextEditingController searchController=TextEditingController();
   List<Customer> customer=[];
   Future<void> getCustomerData(BuildContext context) async {
     try {
